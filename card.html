@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway By Muhammad Afzal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+  *{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+
+}
+:root{
+    --main-color:#4a00e0;
+    --bg-color:#fff;
+    --text-color:#0f0c27;
+    --hover:hsl(260,100%,51%);
+    
+    --big-font:3.2rem;
+    --medium-font:1.8rem;
+    --p-font:0.941rem;
+}
+body{
+    background:var(--bg-colorr);
+    color: var(--text-color);
+}
+*::selection{
+    background:var(--main-color);
+    color: var(--bg-color);
+}
+header{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right:0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-color);
+    padding: 18px 10%;
+    transition: 0.2s;
+}
+header.shadow{
+    box-shadow: 0 0 4px rgb(14 55 54 / 15%);
+}
+.logo{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.navbar{
+    display: flex;
+
+}
+.navbar a{
+    font-size: 1rem;
+    padding: 10px 20px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+.navbar a:hover{
+    color: var(--hover);
+}
+#manu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+#darkmode{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+    /* for pay page style */ 
+.Payment{
+    background-color: var(--bg-color);
+    width: 100vw;
+    min-height: 100vh;
+    font-size: var(--medium-font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 70px;
+
+}
+
+
+#container{
+    background-color: var(--bg-color);
+    border: #4a00e0;
+   max-width: 800px;
+   height: 550px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   /* padding: 0.5rem 1.5rem; */
+   padding-top: 50px;
+   margin-left: 70px;
+
+ 
+}
+
+
+#left{
+    flex-basis: 50%;
+    
+}
+.Right{
+    flex-basis: 50%;
+    
+
+
+}
+form{
+    padding: 1rem;
+    margin-top: 50px;
+}
+form input[type="text"]{
+    width: 100%;
+
+}
+#zip{
+    display: flex;
+    margin-top: 0.5rem;
+    resize: none;
+    height: 200px;
+    outline: none;
+}
+#zip select{
+    padding: 10px;
+    outline: none;
+    margin-right: 12px;
+    border-radius: 0.5rem;
+    background: hsla(260, 44%, 58%, 0.4);
+    color: var(--text-color);
+}
+.form2{
+    display: flex;
+.second-form{
+    /* padding-bottom: 100px; */
+    margin-bottom: 250px;
+}   
+
+    
+   
+}
+#cvv{
+    height: 52.33px;
+     width: 400px;
+     display: flex;
+     justify-content: space-evenly;
+     /* margin-left: 20px; */
+     /* padding-left: 20px; */
+    }
+
+.cvv{
+    margin-right: 18px;
+
+ }    
+
+#submit{
+    margin-bottom: 20px;
+    cursor: pointer;
+
+}
+#submit:hover{
+    background-color: var(--hover);
+}
+.headin{
+    margin-bottom: 20px;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html#" class="logo">Muhammad Afzal</a>
+        <div class="bx box-manu" id="manu-icon"><i class="fa-solid fa-bars"></i></div>
+<ul class="navbar">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="index.html#about">About</a></li>
+  <li><a href="index.html#skills">Skills</a></li>
+  <li><a href="index.html#services">Services</a></li>
+  <li><a href="index.html#feedback">Feedback</a></li>
+  <li><a href="index.html#portfolio">Portfolio</a></li>
+  <li><a href="index.html#contact%20us">Contact Us</a></li>
+  <li><a href="#">Pay Now</a></li>
+  <div class="bx bx-moon" id="darkmode"><i class="fa-solid fa-moon"></i></div>
+</ul>
+</header>
+
+<section class="Payment">
+    <div id="confuse">
+   <div id="container"> 
+       <!-- left -->
+      
+     <div id="left">
+         
+          <form >
+            <h3>Billing Address</h3><br>
+          Full Name
+          <input type="text"  placeholder="Enter Your Name"  >
+          Email
+          <input type="text"  placeholder="Enter Your Email"  >
+          Address
+          <input type="text"  placeholder="Enter Your Address"  >
+          City
+          <input type="text"  placeholder="Enter Your City"  >
+          <div id="zip">
+            <label>
+                State 
+                <select>
+                <option>Chose Your State</option>
+                <option>Punjab</option>
+                <option>Sindh</option>
+                <option>KPK</option>
+                <option>Balochistan</option>
+                <option>Gilgit-Baltistan</option>
+               </select>
+            </label><label>Zip Code <input type="number" placeholder="Zip Code"></label>
+          </div>
+         </form>
+        </div>
+       <!-- Right -->
+       <div class="Right"> <h3 class="headin"  >Payment Details</h3>
+       <form class="second-form">
+         Accepted Card <br>
+           <img src="images/card 1" width="15%"> <img src="images/card 2" width="15%">
+            <img src="images/card 3.png" width="15%"><br> 
+         
+            Card Number
+            <input type="Number"  placeholder="Enter Card Number"  >
+            Exp Date
+            <input type="date"  placeholder="Enter Exp date" > 
+          <label id="cvv"><a class="cvv"  >CVV</a><input type="number" placeholder="CVV"></label>   
+             <input id="submit" type="submit" value="Proceed To Pay"> </div>
+           </form>
+        </div>
+    </div>
+<section>
+
+</body>
+</html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+<script>
+// function validatePhoneNumber(phoneNumber) {
+//     // Regular expression to validate a phone number with country code (e.g., +1234567890)
+//     var phoneRegex = /^\+\d{11,}$/;
+//     return phoneRegex.test(phoneNumber);
+// }
+function validatePhoneNumber(phoneNumber) {
+    // Regular expression to validate a phone number with country code (e.g., +1234567890)
+    var phoneRegex = /^\+(\d{1,}-?){11,}$/; // Accepts numbers like "1-888-452-1505"
+    return phoneRegex.test(phoneNumber);
+}
+
+function validateEmail(email) {
+    // Regular expression to validate an email address
+    var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+}
+
+function SubForm (){
+    var fullName = document.forms["myForm"]["full_name"].value;
+    var email = document.forms["myForm"]["email"].value;
+    var number = document.forms["myForm"]["number"].value;
+    var gender = document.forms["myForm"]["gender"].value;
+    var message = document.forms["myForm"]["message"].value;
+
+    if (fullName === "") {
+        alert("Please enter your full name.");
+        return;
+    }
+
+    if (email === "") {
+        alert("Please enter your email address.");
+        return;
+    }
+
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (number === "") {
+        alert("Please enter your phone number with a country code.");
+        return;
+    }
+
+    if (!validatePhoneNumber(number)) {
+        alert("Please enter a valid phone number with a country code.");
+        return;
+    }
+
+    if (gender === "Not selected") {
+        alert("Please select your gender.");
+        return;
+    }
+
+    if (message === "") {
+        alert("Please write a message.");
+        return;
+    }
+
+    // If all checks pass, you can proceed with form submission
+    $.ajax({
+        url: 'https://api.apispreadsheets.com/data/phyXa3VsFhoRAVpv/',
+        type: 'post',
+        data: $("#myForm").serializeArray(),
+        success: function () {
+            alert("Form Data Submitted :)");
+            // You can redirect or perform other actions here after a successful submission.
+        },
+        error: function () {
+            alert("There was an error :(");
+        }
+    });
+}
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Afzal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+               <!-- box i con -->
+</head>
+<body>
+      <!-- navbar -->
+<header>
+          <a href="#" class="logo">Muhammad Afzal</a>
+          <div class="bx box-manu" id="manu-icon"><i class="fa-solid fa-bars"></i></div>
+<ul class="navbar">
+    <li><a href="#Home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#feedback">Feedback</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact us">Contact Us</a></li>
+    <li><a href="card.html">Pay Now</a></li>
+    <div class="bx bx-moon" id="darkmode"><i class="fa-solid fa-moon"></i></div>
+</ul>
+</header>
+
+     <!-- sectionbar -->
+
+        <!-- homw -->
+<section class="Home" id="Home">
+    <div class="social">
+        <a href="https://github.com/MuhammadAfzal63"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+        <a href="#"><i class="fa-brands fa-behance"></i></a>
+    </div>
+
+
+    <div class="home-img">
+        <img src="images/my pic.jpg" >
+    </div>
+
+
+    <div class="home-text">
+        <span>Hello,I'm</span>
+        <h1>Muhammad Afzal</h1>
+        <h2>Frontend Developer</h2>
+     <p>HI,<br> My Name is Muhammad Afzal i'm from Pakistan and <br> 
+        I'm a front end developer with five 1 years of experience in Frontend development I've worked on a variety of projects for clients in the retail, travel, portfolio website and healthcare industries. I'm passionate about creating great user experiences and have a strong understanding of usability and accessibility standard</p>
+     <a href="http://Wa.me/+923095456263" class="btn"> Contact Me</a>
+    </div>
+
+
+
+    <div class="scroll-down">
+        <a href="#about">
+        <i class="fa-solid fa-computer-mouse"></i>
+        <span>Scroll Down</span>
+        <i class="fa-solid fa-arrow-down"></i>
+    </a>
+    </div>
+</section>
+
+
+
+
+             <!-- About section -->
+<section  class="about" id="about">
+  <div class="heading">
+    <h2>About</h2>
+<span>Introduction</span>
+  </div>
+
+  <!-- box1 -->
+
+<div class="about-container">
+<div class="about-img">
+    <img src="images/BeautyPlus_20230227151452575_save.jpg" >
+</div>
+<div class="about-text">
+<p>Hello, I'm Muhammad Afzal, i'm a passionate Frontend Developer with a strong enthusiasm for creating beautiful and responsive web experiences. As a recent graduate, I bring fresh perspectives, a hunger to learn, and a dedication to crafting user-friendly interfaces. <br>
+
+    My journey into the world of web development started with a deep curiosity and a desire to turn creative ideas into reality. I have hands-on experience with HTML, CSS, JavaScript, and popular frontend libraries/frameworks like React. I'm constantly exploring new technologies and best practices to stay up-to-date with the ever-evolving web landscape. <br>
+    
+    What sets me apart is my attention to detail and a commitment to delivering high-quality, pixel-perfect websites. I love collaborating with design and UX teams to transform concepts into user-centric websites that leave a lasting impression. <br>
+    
+    I'm excited to contribute my skills to projects that challenge me and provide opportunities for growth. Feel free to explore my portfolio to see some of my recent work. If you have a project in mind or just want to chat about frontend development, I'd love to connect. Let's create exceptional web experiences together!</p>
+<div class="information">
+<div class="info-box">
+    <i class="fa-solid fa-user"></i>
+    <span>Muhammad Afzal</span>
+</div>
+<!-- box2_image -->
+
+
+<div class="info-box">
+    <i class="fa-solid fa-phone"></i>
+    <span>+92 309 5456263</span>
+</div>
+
+<!-- box3 -->
+ 
+<div class="info-box">
+    <i class="fa-regular fa-envelope"></i>
+    <span>afzalkhanbaloch263@gmail.com</span>
+</div>
+</div>
+<a href="#" class="btn">Download cv</a>
+</div>
+</div>
+</section>
+
+
+     <!-- Skills section -->
+     <section class="skills" id="skills">
+        <div class="heading">
+            <h2 >Skills</h2> 
+            <span>My Skills</span>
+        </div>
+        <!-- skill content -->
+        <div class="skill-container">
+            <div class="bars"> 
+                <!-- box 1 -->
+                <div class="bar-box">
+                    <h3>Html</h3>
+                    <span>94%</span>
+                    <div class="light-bar"></div>
+                    <div class="persent-bar html-bar"></div>
+                </div>
+
+                <!-- box 2 -->
+                <div class="bar-box">
+                    <h3>CSS</h3>
+                    <span>84%</span>
+                    <div class="light-bar"></div>
+                    <div class="persent-bar css-bar"></div>
+                </div>
+                <!-- box 3 -->
+                <div class="bar-box">
+                    <h3>JavaScript</h3>
+                    <span>74%</span>
+                    <div class="light-bar"></div>
+                    <div class="persent-bar js-bar"></div>
+                </div>
+                <!-- box4 -->
+                <div class="bar-box">
+                    <h3>Bootstraps
+                    </h3>
+                    <span>80%</span>
+                    <div class="light-bar"></div>
+                    <div class="persent-bar React-bar"></div>
+                </div>
+            </div>
+            <div class="skills-img">
+                <img src="images/20231007_173710 - Copy.png" >
+            </div>
+           </div>
+        </section>
+
+
+
+           <!-- Services section -->
+
+           <section class="services" id="services">
+            <DIV class="heading">
+                <h2>Services</h2>
+                <span>Our Services</span>
+            </DIV>
+               <!-- box1 -->
+            <div class="services-content">
+                <div class="services-box">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Web <br> Development</h3>
+                    <a href="#">Learn More</a>
+                </div>
+           
+
+               <!-- box2 -->
+              
+                <div class="services-box">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>Backend<br> Development</h3>
+                    <a href="#">Learn More</a>
+                </div>
+            
+               <!-- box3 -->
+              
+                <div class="services-box">
+                    <i class="fa-solid fa-brush"></i>
+                    <h3>UI/UX <br>Design</h3>
+                    <a href="#">Learn More</a>
+                </div>     
+                </div>
+           </section>
+       <!-- Feedback -->
+       <section  class="feedback" id="feedback">
+        <div class="heading">
+            <h2>Feedback</h2>
+            <span>Customer Reviews</span>
+            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+            <div class="elfsight-app-4c4dccfe-2057-47c3-8896-61ca7bb527fe"></div>
+        </div>
+           </section>
+                <!-- Portfolio section -->
+
+
+ <section  class="portfolio" id="portfolio">
+        <div class="heading">
+            <h2>Portfolio</h2>
+            <span>Our Recent Work</span>
+           
+    <div class="portfolio-content">
+        <!-- img 1 -->
+        <div class="portfolio-img">
+            <img src="images/img1.webp">
+        </div>
+        <!-- img 2 -->
+        <div class="portfolio-img">
+            <img src="images/img2.webp">
+        </div>
+        <!-- img 3 -->
+        <div class="portfolio-img">
+            <img src="images/img3.avif">
+        </div>
+        <!-- img 4 -->
+        <div class="portfolio-img">
+            <img src="images/img4.avif">
+        </div>
+        <!-- img 5 -->
+        <div class="portfolio-img">
+            <img src="images/img5.avif">
+        </div>
+        <!-- img 6 -->
+        <div class="portfolio-img">
+            <img src="images/img6">
+        </div>
+    </div>
+</section>
+  
+
+
+     <!-- contact section -->
+     <section class="contact us" id="contact us">
+        <div class="heading">
+            <h2>Contact</h2>
+            <span>Contact With Us</span>
+        </div>
+        <div class="contact-form">
+            <form id="myForm">
+              <input name="full_name" placeholder="Enter Full Name" required/>
+                <input name="email" placeholder="Enter Your Email" required/>
+                <input name="number" placeholder="Enter Your Number" required /> 
+                <select type="radio" id="age" name="gender" required>
+                    <option value="Not selected" >Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+                <textarea name="message" placeholder="please write message here..." required>
+                </textarea>
+              </form>
+              <button  type="button" value="submit" class="contact-button" onclick="SubForm()">Submit</button>
+
+        </div>
+</section>
+
+    <!-- foooter section  -->
+    <div class="foooter">
+       <h2>Muhammad Afzal</h2>
+       <div class="footer-social">
+        <a href="https://www.facebook.com/afzalpoetschannel?mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://twitter.com/afzal_khan263?s=09"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://instagram.com/m.afzal263?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.threads.net/@m.afzal263"><i class="fa-brands fa-threads"></i></a>
+       </div>
+    </div>
+ <div  class="copyright">
+    <p> &#169; Muhammad Afzal All Right Reserved.</p>
+ </div>
+
+</body>
+</html>
